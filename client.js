@@ -6,7 +6,7 @@ var measure = require('./utils/measure');
 
 var ACTIONS = [
   'register',
-  'updateFeedCache',:x
+  'updateFeedCache',
   'updateYourCache',
   'updateBlogCache',
   'updateBlogFallbackCache',
