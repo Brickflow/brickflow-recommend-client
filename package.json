@@ -9,7 +9,7 @@
   "author": "ifroz <ifrozen@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "amqp-rpc": "git://github.com:ifroz/node-amqp-rpc.git",
+    "amqp-rpc": "git://github.com/ifroz/node-amqp-rpc.git",
     "lodash": "^2.4.1"
   }
 }
