@@ -14,22 +14,22 @@ var ACTIONS = [
 ];
 
 var instances = {};
-function getRPC(url) {
-  if (!instances[url]) {
-    instances[url] = factory({url: url});
+function getRPC(options) {
+  if (!instances[options.url]) {
+    instances[options.url] = factory(options);
   }
-  return instances[url];
+  return instances[options.url];
 }
 
 module.exports = function createClient(options) {
   options = _.defaults(options || {}, {
-    exchange: 'recommend-rpc',
+    exchange: 'recommend_rpc_exchange',
     queueName: 'recommend-rpc',
     url: 'amqp://guest:guest@localhost:5672'
   });
   var logger = options.logger || defaultLogger;
 
-  var rpc = getRPC(options.url);
+  var rpc = getRPC(_.pick(options, 'url', 'exchange'));
 
   function query(action) {
     var args = Array.prototype.slice.call(arguments);
